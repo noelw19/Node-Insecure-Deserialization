@@ -6,6 +6,9 @@ import cookieParser from "cookie-parser";
 let app = express();
 app.use(cookieParser())
 
+let PORT = 8080;
+let HOST = '0.0.0.0';
+
 // {"username":"Noel","country":"PNG","city":"Port Moresby"}
 app.get('/', function(req, res) {
     if (req.cookies.profile) {
@@ -20,6 +23,6 @@ app.get('/', function(req, res) {
     } 
 });
 
-app.listen(4000, () => {
-    console.log('Server running on 4000')
+app.listen(PORT, HOST, () => {
+    console.log('Server running on ', PORT)
 })
